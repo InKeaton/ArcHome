@@ -8,8 +8,8 @@
 }
 
 window#waybar {
-    background-color: @sfondo;
-    color: #ffffff;
+    background-color: @bg-main;
+    color: @fg-main;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 0;
@@ -34,21 +34,15 @@ button:hover {
     border-radius: 10px;
 }
 
-button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    /*transform: translateY(4px);*/
-}
-
 #workspaces {
-    background-color: #c52a46;
+    background-color: @bg-wrksp;
     margin: 6px 3px;
     padding: 0px 10px;
 }
 
 #workspaces button {
-    color: #2f354a;
-    background-color: #2f354a;
+    color: @fg-wrksp-button ;
+    background-color: @fg-wrksp-button;
     padding: 0px 5px;
     margin: 6px 8px;
     border-radius: 15px;
@@ -62,17 +56,11 @@ button:active {
 }
 
 #workspaces button.active {
-    color: #cdd6f4;
-    background-color: #cdd6f4;
+    color: @fg-wrksp-active;
+    background-color: @fg-wrksp-active;
     border-radius: 15px;
     min-width: 50px;
     transition: all 0.3s ease-in-out;
-}
-
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
 }
 
 #clock,
@@ -93,7 +81,7 @@ button:active {
 #mpd {
     padding: 0px 15px;
     margin: 6px 3px;
-    color: #ffffff;
+    color: @fg-main;
 }
 
 
@@ -109,16 +97,16 @@ button:active {
 }
 
 #clock {
-    background-color: #38518C;
+    background-color: @bg-clock;
 }
 
 #battery {
-    background-color: #2A2350;
+    background-color: @bg-battery;
 }
 
 #battery.charging, #battery.plugged {
-    color: #000000;
-    background-color: rgb(15, 241, 181);
+    color: @fg-battery-charg;
+    background-color: @bg-battery-charg;
 }
 
 @keyframes blink {
@@ -129,8 +117,8 @@ button:active {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #fffb11;
-    color: #000000;
+    background-color: @bg-urgent;
+    color: @fg-battery-charg;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -143,53 +131,35 @@ label:focus {
 }
 
 #backlight {
-    background-color: #38518C;
+    background-color: @bg-brightness;
 }
 
 #network {
-    background-color: #C33161;
+    background-color: @bg-network;
 }
 
 #network.disconnected {
-    background-color: #f0932b;
+    background-color: @bg-deactivated;
 }
 
 #pulseaudio {
-    background-color: #fff0f5;
-    color: #000000;
+    background-color: @bg-audio;
+    color: @fg-audio;
 }
 
 #pulseaudio.muted {
-    background-color: #B886AB;
-    color: #2a5c45;
-}
-
-#wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-}
-
-#wireplumber.muted {
-    background-color: #f53c3c;
+    background-color: @bg-deactivated;
+    color:@fg-deactivated;
 }
 
 #custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+    background-color: @bg-media;
+    color: @fg-media;
     min-width: 100px;
 }
 
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-
 #tray {
-    background-color: #2980b9;
+    background-color: @bg-tray;
 }
 
 #tray > .passive {
@@ -198,13 +168,13 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @bg-urgent;
 }
 
 /*pacman updates*/
 @keyframes blink-update {
 	to {
-		background-color: #9FB935;
+		background-color: @bg-pacman;
 	}
 }
 
@@ -212,7 +182,7 @@ label:focus {
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-    color:#000000
+    color: @theme-black
 }
 #custom-pacman.pending-updates {
 	animation-name: blink-update;

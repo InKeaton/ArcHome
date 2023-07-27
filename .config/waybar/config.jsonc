@@ -115,8 +115,9 @@
         "on-click": "pavucontrol"
     },
 
+    // media
     "custom/media": {
-        "format": "{icon}   {}",
+        "format": "{icon} {}",
         "escape": true,
         "return-type": "json",
         "max-length": 40,
