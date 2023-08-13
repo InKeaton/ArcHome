@@ -12,4 +12,9 @@ My Hyprland configuration for a simple, yet beautiful, desktop enviroment
 ## Secondary Software Used
 
 + Zsh - A modern shell designed for interactive use
-f
+
+## TO DO
+
++ Add software descriptions
++ Add software requirements
++ Add specific README for the configurations

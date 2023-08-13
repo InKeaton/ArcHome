@@ -1,4 +1,21 @@
 #!/usr/bin/env python3
+
+
+'''
+
+888b     d888               888 d8b          
+8888b   d8888               888 Y8P          
+88888b.d88888               888              
+888Y88888P888  .d88b.   .d88888 888  8888b.  
+888 Y888P 888 d8P  Y8b d88" 888 888     "88b 
+888  Y8P  888 88888888 888  888 888 .d888888 
+888   "   888 Y8b.     Y88b 888 888 888  888 
+888       888  "Y8888   "Y88888 888 "Y888888 
+
+'''                                          
+                                             
+
+
 import gi
 gi.require_version("Playerctl", "2.0")
 from gi.repository import Playerctl, GLib
@@ -121,9 +138,9 @@ class PlayerManager:
 
         if track_info:
             if player.props.status == "Playing":
-                track_info = " " + track_info
+                track_info = "  " + track_info
             else:
-                track_info = " " + track_info
+                track_info = "  " + track_info
         # only print output if no other player is playing
         current_playing = self.get_first_playing_player()
         if current_playing is None or current_playing.props.player_name == player.props.player_name:
