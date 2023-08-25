@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+#  8888888b.           .d888 d8b                  888       888 d8b  .d888 d8b 
+#  888   Y88b         d88P"  Y8P                  888   o   888 Y8P d88P"  Y8P 
+#  888    888         888                         888  d8b  888     888        
+#  888   d88P .d88b.  888888 888                  888 d888b 888 888 888888 888 
+#  8888888P" d88""88b 888    888                  888d88888b888 888 888    888 
+#  888 T88b  888  888 888    888      888888      88888P Y88888 888 888    888 
+#  888  T88b Y88..88P 888    888                  8888P   Y8888 888 888    888 
+#  888   T88b "Y88P"  888    888                  888P     Y888 888 888    888 
+                                                                        
+
 notify-send "Getting list of available Wi-Fi networks..."
 # Get a list of available wifi connections and morph it into a nice-looking list
 wifi_list=$(nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d")
